@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "R32ZMG9WCqO5o9zJ0hQSfuGd+WNfeaouysZRA5cjssM=",
+  "Source": "UserRegisterService.API",
+  "BasePath": "_content/UserRegisterService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
