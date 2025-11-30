@@ -6,4 +6,20 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Requests\User\Commands\Delete\" />
+      <Folder Include="Requests\User\Commands\Update\" />
+      <Folder Include="Requests\User\Quaries\GetList\" />
+      <Folder Include="Requests\User\Quaries\GetOne\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="MediatR" Version="13.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\UserRegisterService.Domain\UserRegisterService.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
