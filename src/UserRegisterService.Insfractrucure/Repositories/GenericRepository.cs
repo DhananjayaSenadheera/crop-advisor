@@ -1,0 +1,39 @@
+using UserRegisterService.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using UserRegisterService.Insfractrucure.Database_Configurations;
+
+namespace UserRegisterService.Insfractrucure.Repositories;
+
+public class GenericRepository<T>(RegistrationServiceDbContext dbContext) : IGenericRepository<T>
+    where T : class
+{
+    private readonly DbSet<T> _dbSet = dbContext.Set<T>();
+
+    public async Task AddAsync(T entity)
+    {
+        await _dbSet.AddAsync(entity);
+    }
+
+    public Task UpdateAsync(T entity)
+    {
+        _dbSet.Update(entity);
+        return Task.FromResult(true);
+    }
+
+    public Task DeleteAsync(T entity)
+    {
+        _dbSet.Remove(entity);
+        return Task.FromResult(true);
+    }
+
+    public async Task<T> GetByIdAsync(Guid id)
+    {
+        await _dbSet.FindAsync(id);
+        return _dbSet.AsNoTracking().FirstOrDefault();
+    }
+
+    public async Task<IEnumerable<T>> GetAllAsync()
+    {
+        return await _dbSet.ToListAsync();
+    }
+}

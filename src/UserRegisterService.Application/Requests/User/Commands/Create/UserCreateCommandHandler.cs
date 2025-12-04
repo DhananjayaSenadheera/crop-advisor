@@ -17,7 +17,7 @@ public class UserCreateCommandHandler(
     {
         try
         {
-            var user = mapper.Map<Domain.Entities.User>(request);
+            var user = mapper.Map<Domain.Entities.User>(request.UserCreateDto);
             user.Id = Guid.NewGuid();
             await userRepository.AddAsync(user);
             await unitOfWork.CommitAsync();
