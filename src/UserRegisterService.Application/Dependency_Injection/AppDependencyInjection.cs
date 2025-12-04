@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using UserRegisterService.Application.Helper;
 using UserRegisterService.Application.Mapping;
+using UserRegisterService.Application.Requests.User.Services;
 using UserRegisterService.Application.Requests.User.Validators;
 using UserRegisterService.Domain.Interfaces;
 
@@ -16,6 +17,7 @@ public static class AppDependencyInjection
         services.AddAutoMapper(typeof(ProfileMapper));
         services.AddValidatorsFromAssemblyContaining<UserCreateValidator>();
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddScoped<IPasswordHasher, PasswordHasher>();
         
         return services;
     }
