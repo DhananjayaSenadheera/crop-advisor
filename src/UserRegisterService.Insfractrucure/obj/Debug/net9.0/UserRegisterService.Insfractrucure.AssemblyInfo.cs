@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserRegisterService.Insfractrucure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3568189c96e32dba15dbe5c2a6378ed5fc9f11c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5965b7b51f081e19ef7ae6b8a469a8018f50350e")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserRegisterService.Insfractrucure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserRegisterService.Insfractrucure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
