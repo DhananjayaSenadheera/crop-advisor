@@ -27,5 +27,8 @@ public class UserCreateValidator : AbstractValidator<UserCreateCommand>
         RuleFor(x => x.UserCreateDto.Password)
             .NotEmpty().WithMessage("Password cannot be empty")
             .MinimumLength(6).WithMessage("Password must be at least 6 characters");
+        
+        RuleFor(x => x.UserCreateDto.Email)
+            .EmailAddress().WithMessage("Invalid email address");
     }
 }
