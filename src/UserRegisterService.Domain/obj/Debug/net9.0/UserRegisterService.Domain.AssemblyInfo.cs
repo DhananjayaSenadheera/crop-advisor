@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserRegisterService.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3545b443ed7aaab1a67794d86a4b262a4ca0ef3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e68bbd0761331ea091d72e308659db6e107127aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserRegisterService.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserRegisterService.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

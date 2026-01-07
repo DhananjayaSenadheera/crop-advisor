@@ -12,4 +12,7 @@ public class User
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
     public Status Status { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+    
 }

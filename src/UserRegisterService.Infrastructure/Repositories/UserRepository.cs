@@ -34,4 +34,10 @@ public class UserRepository(IGenericRepository<User> userRepository) : IUserRepo
         return await userRepository.GetByIdAsync(id);
     }
     
+
+    public Task<User?> GetByUserNameAsync(string userName)
+    {
+        var result = userRepository.GetAsync(u => u.UserName == userName);
+        return result;
+    }
 }

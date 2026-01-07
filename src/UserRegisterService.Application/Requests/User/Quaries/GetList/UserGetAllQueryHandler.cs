@@ -22,7 +22,7 @@ public class UserGetAllQueryHandler(
     {
         try
         {
-            var users = _userRepository.GetAll();
+            var users = await _userRepository.GetAll();
             var result = _mapper.Map<List<UserGetDto>>(users);
             return await Task.FromResult(Result<List<UserGetDto>>.Success(result));
 

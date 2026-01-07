@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace UserRegisterService.Domain.Interfaces;
 
 public interface IGenericRepository<T> where T : class 
@@ -7,4 +9,5 @@ public interface IGenericRepository<T> where T : class
     Task DeleteAsync(T entity);
     Task<T> GetByIdAsync(Guid id);
     Task<IEnumerable<T>> GetAllAsync();
+    Task<T?> GetAsync(Expression<Func<T, bool>> predicate);
 }
