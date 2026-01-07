@@ -26,7 +26,6 @@ public class UserRepository(IGenericRepository<User> userRepository) : IUserRepo
     public async Task<IEnumerable<User>> GetAll()
     {
         return await userRepository.GetAllAsync();
-        
     }
 
     public async Task<User> GetByIdAsync(Guid id)
@@ -38,6 +37,12 @@ public class UserRepository(IGenericRepository<User> userRepository) : IUserRepo
     public Task<User?> GetByUserNameAsync(string userName)
     {
         var result = userRepository.GetAsync(u => u.UserName == userName);
+        return result;
+    }
+
+    public Task<bool> ExistsByUsernameAsync(string userName)
+    {
+        var result = userRepository.ExistsAsync(u => u.UserName == userName);
         return result;
     }
 }

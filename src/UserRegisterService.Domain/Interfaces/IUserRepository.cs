@@ -10,5 +10,6 @@ public interface IUserRepository
     Task <IEnumerable<User>> GetAll();
     Task<User> GetByIdAsync(Guid id);
     Task<User?> GetByUserNameAsync(string userName);
+    Task<bool> ExistsByUsernameAsync(string userName);
 
 }

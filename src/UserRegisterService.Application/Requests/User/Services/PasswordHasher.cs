@@ -22,7 +22,6 @@ public class PasswordHasher :IPasswordHasher
         );
 
         var key = pbkdf2.GetBytes(KeySize);
-
         return $"{Iterations}:{Convert.ToBase64String(salt)}:{Convert.ToBase64String(key)}";
     }
 
@@ -30,7 +29,7 @@ public class PasswordHasher :IPasswordHasher
     {
         if (string.IsNullOrWhiteSpace(storedHash) || string.IsNullOrWhiteSpace(password))
             return false;
-        // Backward compatibility: your old format is "salt:key"
+        // Backward compatibility
         var parts = storedHash.Split(':');
         if (parts.Length == 2)
         {
@@ -43,7 +42,7 @@ public class PasswordHasher :IPasswordHasher
             return CryptographicOperations.FixedTimeEquals(actualKey, expectedKey);
         }
         
-        // New format: "iterations:salt:key"
+        // New format
         if (parts.Length != 3) return false;
 
         if (!int.TryParse(parts[0], out var iterations)) return false;

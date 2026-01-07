@@ -7,7 +7,7 @@ using UserRegisterService.Application.Requests.User.Quaries.GetList;
 namespace UserRegisterService.API.Controllers;
 
 [ApiController]
-[Route("api/user")]
+[Route("api/users")]
 public class UserController(IMediator mediator) : ControllerBase
 {
   [HttpPost("register")]
@@ -44,7 +44,7 @@ public class UserController(IMediator mediator) : ControllerBase
   {
     errors = new[]
     {
-      new { property = "General", message = error }
+      new { property = "User", message = error }
     }
   };
 }

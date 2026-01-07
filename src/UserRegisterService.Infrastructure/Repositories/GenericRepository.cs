@@ -37,12 +37,16 @@ public class GenericRepository<T>(RegistrationServiceDbContext dbContext) : IGen
     {
         var result= await _dbSet.ToListAsync();
         return result;
-   
     }
     public async Task<T?> GetAsync(Expression<Func<T, bool>> predicate)
     {
         var result = await _dbSet.AsNoTracking().FirstOrDefaultAsync(predicate);
          return result;
     }
-    
+
+    public Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        var result = _dbSet.AsNoTracking().AnyAsync(predicate, cancellationToken);
+        return result;
+    }
 }
