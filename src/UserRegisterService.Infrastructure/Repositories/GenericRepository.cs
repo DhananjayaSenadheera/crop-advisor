@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using UserRegisterService.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using UserRegisterService.Insfractrucure.Database_Configurations;
@@ -34,6 +35,18 @@ public class GenericRepository<T>(RegistrationServiceDbContext dbContext) : IGen
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return await _dbSet.ToListAsync();
+        var result= await _dbSet.ToListAsync();
+        return result;
+    }
+    public async Task<T?> GetAsync(Expression<Func<T, bool>> predicate)
+    {
+        var result = await _dbSet.AsNoTracking().FirstOrDefaultAsync(predicate);
+         return result;
+    }
+
+    public Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        var result = _dbSet.AsNoTracking().AnyAsync(predicate, cancellationToken);
+        return result;
     }
 }

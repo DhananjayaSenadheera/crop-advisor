@@ -18,19 +18,19 @@ public class UserCreateCommandHandler(
 {
     public async Task<Result<bool>> Handle(UserCreateCommand request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var user = mapper.Map<Domain.Entities.User>(request.UserCreateDto);
-            user.Id = Guid.NewGuid();
-            user.Password = passwordHasher.HashPassword(request.UserCreateDto.Password);
-            await userRepository.AddAsync(user);
-            await unitOfWork.CommitAsync();
-            return Result<bool>.Success(true);
-        }
-        catch (Exception e)
-        {
-            logger.LogError(e, e.Message);
-            return Result<bool>.Failure("Failed to create user");
-        }
+        var dto = request.UserCreateDto;
+        if (dto is null)
+            return Result<bool>.Failure("User details are required.");
+        //Exits users
+        var exists = await userRepository.ExistsByUsernameAsync(dto.UserName);
+        if (exists)
+            return Result<bool>.Failure("User already exists.");
+        
+        var user = mapper.Map<Domain.Entities.User>(request.UserCreateDto);
+        user.Id = Guid.NewGuid();
+        user.Password = passwordHasher.HashPassword(dto.Password);
+        await userRepository.AddAsync(user);
+        await unitOfWork.CommitAsync();
+        return Result<bool>.Success(true);
     }
 }

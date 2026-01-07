@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterService.Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterService.Domain", "UserRegisterService.Domain\UserRegisterService.Domain.csproj", "{4FCD99AD-CA54-46B9-ADAA-F35794B2315D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterService.Insfractrucure", "UserRegisterService.Insfractrucure\UserRegisterService.Insfractrucure.csproj", "{5CEF133E-C090-4E8E-A8CD-5BAA8E12286B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterService.Infrastructure", "UserRegisterService.Infrastructure\UserRegisterService.Infrastructure.csproj", "{5CEF133E-C090-4E8E-A8CD-5BAA8E12286B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRegisterService.API", "UserRegisterService.API\UserRegisterService.API.csproj", "{69D932BF-4C97-4A7F-AC25-8106D2A85628}"
 EndProject

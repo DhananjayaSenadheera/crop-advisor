@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserRegisterService.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5965b7b51f081e19ef7ae6b8a469a8018f50350e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4122dccbda3e706edd62caf45432777d49a8cbb0")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserRegisterService.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserRegisterService.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
